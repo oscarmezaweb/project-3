@@ -137,7 +137,7 @@ define( [ "yasmf", "app/models/noteStorageSingleton", "text!html/noteListView.ht
      * Render the note list; called whenever the storage collection changes
      */
     self.renderList = function() {
-      var notes = noteStorageSingleton.collection;
+      var notes = noteStorageSingleton.collection; 
       var fragment = document.createDocumentFragment();
       // loop over each note
       for ( var note in notes ) {
@@ -157,6 +157,9 @@ define( [ "yasmf", "app/models/noteStorageSingleton", "text!html/noteListView.ht
               "REPRESENTATION": notes[ note ].representation,
               "MODIFIED": _y.D( notes[ note ].modifiedDate, "D" ),
               "INFO": "" + _y.N( notes[ note ].formattedUnitValue ),
+			   /*********
+				* Jenny  *
+				* *******/ 
 			  "STATUS": notes[ note ].status // this line sets the status in the dom to whatever the user input was 
             } );
             // attach any event handlers
